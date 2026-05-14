@@ -1017,26 +1017,27 @@ function toggleFaq(btn) {
 function handleSubmit(e) {
   e.preventDefault();
   var form = e.target;
+  var btn  = form.querySelector('.submit-btn');
+  btn.disabled    = true;
+  btn.textContent = 'Saving your spot…';
+
   var data = {
     name:    form.name.value,
     email:   form.email.value,
     phone:   form.phone.value,
-    company: form.company.value
+    company: form.company.value,
+    source:  'ai-webinar-landing'
   };
 
-  // TODO: POST to your GoHighLevel / CRM webhook endpoint
+  // TODO: replace with your GoHighLevel / CRM webhook endpoint
   // fetch('YOUR_WEBHOOK_URL', {
   //   method: 'POST',
   //   headers: { 'Content-Type': 'application/json' },
   //   body: JSON.stringify(data)
-  // });
+  // }).catch(function() {});
 
-  document.getElementById('form-inner').innerHTML =
-    '<div class="success-state">' +
-      '<div class="success-check">✓</div>' +
-      '<h3>You\'re registered!</h3>' +
-      '<p>Your details have been received. Check your inbox for the date, time, and webinar link. See you live!</p>' +
-    '</div>';
+  // Redirect to thank you page
+  window.location.href = 'thank-you.html';
 }
 </script>
 </body>
