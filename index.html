@@ -637,13 +637,12 @@ footer{border-top:1px solid var(--border);padding:24px 0;background:var(--bg);}
         </div>
       </div>
 
-      <!-- Matt Curd - pending -->
-      <div class="vt-card" style="cursor:default">
-        <div class="vt-thumb">
-          <img src="uploads/thumb-matt-curd.jpg" alt="Matt Curd" class="vt-thumb-img" loading="lazy">
+      <!-- Matt Curd - YouTube -->
+      <div class="vt-card" id="vt-1" onclick="playVideo(1)">
+        <div class="vt-thumb" id="vt-thumb-1">
+          <img src="uploads/thumb-matt-curd.jpg" alt="Matt Curd testimonial" class="vt-thumb-img" loading="lazy">
           <div class="vt-thumb-overlay"></div>
-          <span class="vt-pending">Video to be embedded</span>
-          <button class="vt-play" aria-label="Coming soon" style="opacity:0.5;cursor:default">
+          <button class="vt-play" aria-label="Play Matt Curd testimonial">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </button>
         </div>
@@ -964,6 +963,7 @@ function playVSL() {
 // ── VIDEO TESTIMONIALS ──
 var videoData = {
   0: { type: 'mp4',     url: 'uploads/Leak-Detection-Testimonial-Video.mp4' },
+  1: { type: 'youtube', url: 'https://www.youtube.com/embed/Y7HwFq7M4kg?autoplay=1' },
   2: { type: 'youtube', url: 'https://www.youtube.com/embed/QNDYK09cPi0?autoplay=1' }
 };
 
