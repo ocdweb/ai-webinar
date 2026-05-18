@@ -1022,20 +1022,25 @@ function handleSubmit(e) {
   btn.textContent = 'Saving your spot…';
 
   var data = {
-    name:    form.elements['name'].value,
-    email:   form.elements['email'].value,
-    phone:   form.elements['phone'].value,
-    company: form.elements['company'].value,
+    name:    document.getElementById('f-name').value,
+    email:   document.getElementById('f-email').value,
+    phone:   document.getElementById('f-phone').value,
+    company: document.getElementById('f-company').value,
     source:  'ai-webinar-landing'
   };
 
+  // keepalive ensures the request completes even if the page navigates away
   fetch('https://hooks.zapier.com/hooks/catch/12454565/4o30vsu/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
+    method:    'POST',
+    keepalive: true,
+    headers:   { 'Content-Type': 'application/json' },
+    body:      JSON.stringify(data)
   })
-  .catch(function() {}) // redirect regardless — don't block on network error
-  .finally(function() {
+  .then(function() {
+    window.location.href = 'thank-you.html';
+  })
+  .catch(function() {
+    // Still redirect on error so the user isn't stuck
     window.location.href = 'thank-you.html';
   });
 }
