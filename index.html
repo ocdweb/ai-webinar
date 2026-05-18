@@ -1021,26 +1021,24 @@ function handleSubmit(e) {
   btn.disabled    = true;
   btn.textContent = 'Saving your spot…';
 
-  var data = {
-    name:    document.getElementById('f-name').value,
-    email:   document.getElementById('f-email').value,
-    phone:   document.getElementById('f-phone').value,
-    company: document.getElementById('f-company').value,
-    source:  'ai-webinar-landing'
-  };
+  // URLSearchParams = application/x-www-form-urlencoded — a "simple" CORS
+  // request that needs no preflight, so the POST always reaches Zapier
+  // before the page navigates away.
+  var params = new URLSearchParams();
+  params.append('name',    document.getElementById('f-name').value);
+  params.append('email',   document.getElementById('f-email').value);
+  params.append('phone',   document.getElementById('f-phone').value);
+  params.append('company', document.getElementById('f-company').value);
+  params.append('source',  'ai-webinar-landing');
 
-  // keepalive ensures the request completes even if the page navigates away
   fetch('https://hooks.zapier.com/hooks/catch/12454565/4o30vsu/', {
-    method:    'POST',
-    keepalive: true,
-    headers:   { 'Content-Type': 'application/json' },
-    body:      JSON.stringify(data)
+    method: 'POST',
+    body:   params
   })
   .then(function() {
     window.location.href = 'thank-you.html';
   })
   .catch(function() {
-    // Still redirect on error so the user isn't stuck
     window.location.href = 'thank-you.html';
   });
 }
