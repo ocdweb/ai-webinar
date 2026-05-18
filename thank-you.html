@@ -118,9 +118,9 @@ input,select,textarea{font-family:inherit;}
 
 /* VSL */
 .vsl-frame{
-  position:relative;aspect-ratio:16/7;border-radius:14px;overflow:hidden;
+  position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
   background:#1a1a1a;box-shadow:0 16px 48px -8px rgba(0,0,0,0.2);
-  cursor:pointer;margin-top:28px;border:1px solid #e0e0e0;
+  margin-top:28px;border:1px solid #e0e0e0;
 }
 .vsl-stripes{
   position:absolute;inset:0;
@@ -281,16 +281,8 @@ footer{border-top:1px solid var(--border);padding:22px 0;background:var(--bg);}
   <div class="wrap-wide fu d3">
     <h2 class="section-title">Watch This Before the Webinar</h2>
     <p class="section-sub">A quick look at what we'll be covering — so you know exactly what to expect and how to prepare.</p>
-    <div class="vsl-frame" id="vsl-frame" onclick="playVSL()">
-      <div class="vsl-stripes"></div>
-      <span class="vsl-tag">VSL · Watch Before You Attend</span>
-      <div class="vsl-center">
-        <button class="vsl-play" aria-label="Play video">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-        <p class="vsl-caption">A quick look at how Australian builders are using AI right now to save hours and win more jobs.</p>
-        <p class="vsl-runtime">3–5 min · One Click Digital</p>
-      </div>
+    <div class="vsl-frame" id="vsl-frame">
+      <iframe src="https://www.youtube.com/embed/w56W7TvE870?rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media" allowfullscreen title="Watch Before You Attend — AI Webinar"></iframe>
     </div>
   </div>
 </section>
@@ -352,16 +344,6 @@ function downloadIcal() {
   URL.revokeObjectURL(url);
 }
 
-// ── VSL PLAY ──
-function playVSL() {
-  var frame = document.getElementById('vsl-frame');
-  if (!frame) return;
-  // TODO: replace with real VSL embed URL when available
-  frame.innerHTML =
-    '<div class="vsl-playing">' +
-      '<p style="color:#555;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase">[ YOUR VSL VIDEO GOES HERE ]</p>' +
-    '</div>';
-}
 
 // ── SURVEY SUBMIT ──
 function handleSurvey(e) {
