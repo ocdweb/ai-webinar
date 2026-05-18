@@ -1022,22 +1022,22 @@ function handleSubmit(e) {
   btn.textContent = 'Saving your spot…';
 
   var data = {
-    name:    form.name.value,
-    email:   form.email.value,
-    phone:   form.phone.value,
-    company: form.company.value,
+    name:    form.elements['name'].value,
+    email:   form.elements['email'].value,
+    phone:   form.elements['phone'].value,
+    company: form.elements['company'].value,
     source:  'ai-webinar-landing'
   };
 
-  // TODO: replace with your GoHighLevel / CRM webhook endpoint
-  // fetch('YOUR_WEBHOOK_URL', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify(data)
-  // }).catch(function() {});
-
-  // Redirect to thank you page
-  window.location.href = 'thank-you.html';
+  fetch('https://hooks.zapier.com/hooks/catch/12454565/4o30vsu/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .catch(function() {}) // redirect regardless — don't block on network error
+  .finally(function() {
+    window.location.href = 'thank-you.html';
+  });
 }
 </script>
 </body>
