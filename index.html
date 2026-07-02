@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free AI Webinar for Builders | One Click Digital</title>
-<meta name="description" content="Discover how Australian builders are using AI to quote faster, win more jobs, and run a leaner business. Free live webinar for construction companies doing $1M+.">
+<title>Free AI Training for Builders | Legacy Media</title>
+<meta name="description" content="Discover how Australian builders are using AI to quote faster and win more jobs. Free live training for construction companies.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Free AI Webinar for Builders | One Click Digital">
-<meta property="og:description" content="How AI is changing construction marketing. Free live webinar built for Australian construction companies $1M+.">
+<meta property="og:title" content="Free AI Training for Builders | Legacy Media">
+<meta property="og:description" content="How AI is changing construction marketing. Free live training built for Australian construction companies.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="uploads/logo.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free AI Webinar for Builders | One Click Digital">
-<meta name="twitter:description" content="How AI is changing construction marketing. Free live webinar for AU construction companies $1M+.">
-<link rel="icon" type="image/png" href="uploads/logo.png">
+<meta name="twitter:title" content="Free AI Training for Builders | Legacy Media">
+<meta name="twitter:description" content="How AI is changing construction marketing. Free live training for AU construction companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
@@ -53,23 +51,32 @@ input,select{font-family:inherit;}
 .wrap-wide{width:100%;max-width:960px;margin:0 auto;padding:0 24px;}
 @media(max-width:600px){.wrap,.wrap-wide{padding:0 16px;}}
 
-/* TOPBAR */
+/* TOP BAR (date + countdown + CTA) */
 .topbar{
   border-bottom:1px solid var(--border);background:white;
   position:sticky;top:0;z-index:90;
 }
 .topbar-inner{
-  max-width:960px;margin:0 auto;padding:0 24px;
-  display:flex;align-items:center;justify-content:space-between;height:52px;
+  max-width:960px;margin:0 auto;padding:8px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;min-height:52px;flex-wrap:wrap;
 }
-.logo-img{height:32px;width:auto;display:block;}
+.tb-left{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:13px;font-weight:600;line-height:1.3;}
+.tb-cal{font-size:15px;}
+.tb-date{color:var(--black);}
+.tb-sep{opacity:.35;}
+.tb-countdown{color:var(--purple);font-weight:700;font-variant-numeric:tabular-nums;}
 .topbar-cta{
   background:var(--purple);color:white;
   padding:8px 18px;border-radius:999px;
-  font-weight:600;font-size:13px;
+  font-weight:600;font-size:13px;white-space:nowrap;
   transition:background .15s;
 }
 .topbar-cta:hover{background:var(--purple-light);}
+@media(max-width:600px){
+  .tb-left{font-size:12px;gap:7px;}
+  .topbar-cta{display:none;}
+}
 
 /* HERO */
 .hero{padding:28px 0 32px;text-align:center;}
@@ -93,43 +100,15 @@ input,select{font-family:inherit;}
   text-decoration-thickness:3px;text-underline-offset:4px;
 }
 
-/* VSL */
-.vsl-wrap{width:100%;margin:0 auto;}
+/* VSL — constrained so it never dominates the page */
+.vsl-wrap{width:100%;max-width:720px;margin:0 auto;padding:0 24px;}
 .vsl-frame{
   position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;
   background:#1a1a1a;box-shadow:0 20px 60px -10px rgba(0,0,0,0.22);
   border:1px solid #e0e0e0;
 }
-.vsl-stripes{
-  position:absolute;inset:0;
-  background:radial-gradient(55% 50% at 50% 40%,rgba(123,44,191,0.35) 0%,transparent 65%),
-    repeating-linear-gradient(45deg,#1c1c1c 0 16px,#181818 16px 32px);
-}
-.vsl-tag{
-  position:absolute;top:12px;left:12px;z-index:3;
-  background:rgba(0,0,0,0.7);color:rgba(180,120,255,0.9);
-  padding:5px 10px;border-radius:5px;
-  font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
-  font-family:ui-monospace,Menlo,monospace;border:1px solid rgba(123,44,191,0.3);
-}
-.vsl-center{
-  position:absolute;inset:0;z-index:2;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:16px;padding:24px;text-align:center;
-}
-.vsl-play{
-  width:72px;height:72px;border-radius:50%;background:white;color:var(--purple);
-  display:grid;place-items:center;border:0;
-  box-shadow:0 12px 36px rgba(0,0,0,0.35),0 0 0 8px rgba(255,255,255,0.1);
-  transition:transform .2s;
-}
-.vsl-play:hover{transform:scale(1.06);}
-.vsl-play svg{margin-left:5px;}
-.vsl-caption{color:white;font-weight:600;font-size:clamp(11.5px,1vw,14.5px);max-width:42ch;line-height:1.4;}
-.vsl-runtime{color:rgba(255,255,255,0.45);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;font-family:ui-monospace,Menlo,monospace;}
-.vsl-playing{position:absolute;inset:0;display:grid;place-items:center;background:#050505;}
 
-/* BELOW-VSL CTA */
+/* CTA */
 .below-vsl{text-align:center;margin-top:20px;}
 .cta-pill{
   display:inline-flex;align-items:center;gap:8px;
@@ -143,31 +122,13 @@ input,select{font-family:inherit;}
 .cta-pill:hover{background:var(--purple-light);transform:translateY(-1px);box-shadow:0 12px 28px rgba(123,44,191,0.4);}
 .cta-pill:active{transform:translateY(0);}
 
-/* COUNTDOWN */
-.countdown-box{
-  background:var(--purple-bg);border:1px solid var(--purple-border);
-  border-radius:10px;padding:10px 16px;
-  display:inline-flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
-}
-.cd-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple);}
-.cd-digits{display:flex;gap:6px;align-items:center;}
-.cd-block{display:flex;flex-direction:column;align-items:center;}
-.cd-num{
-  font-weight:800;font-size:1.2rem;color:var(--purple);
-  background:white;border:1px solid var(--purple-border);
-  border-radius:6px;padding:3px 9px;min-width:38px;
-  text-align:center;font-variant-numeric:tabular-nums;line-height:1.2;
-}
-.cd-unit{font-size:0.55rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple);opacity:.7;margin-top:3px;font-weight:700;}
-.cd-sep{font-weight:800;font-size:0.95rem;color:var(--purple);padding-bottom:10px;opacity:.5;}
-.cd-live{font-size:1.1rem;letter-spacing:0.02em;color:var(--purple);font-weight:700;}
-
 /* DIVIDER */
 .section-divider{height:1px;background:var(--border);margin:0;border:none;}
 
 /* SECTIONS */
 .section{padding:64px 0;}
 @media(max-width:600px){.section{padding:48px 0;}}
+.section-alt{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 .section-label{
   display:block;font-size:13px;font-weight:600;letter-spacing:0.16em;
   text-transform:uppercase;color:var(--purple);margin-bottom:12px;text-align:center;
@@ -175,8 +136,8 @@ input,select{font-family:inherit;}
 .section-title{font-size:clamp(1.5rem,2.8vw,2rem);text-align:center;margin-bottom:12px;color:var(--black);}
 .section-sub{text-align:center;color:var(--grey);font-size:0.95rem;max-width:52ch;margin:0 auto;line-height:1.7;}
 
-/* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+/* TESTIMONIALS / REVIEWS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;align-items:start;}
 @media(max-width:900px){.testi-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:580px){.testi-grid{grid-template-columns:1fr;}}
 .testi-card{
@@ -185,7 +146,10 @@ input,select{font-family:inherit;}
   box-shadow:0 2px 8px rgba(0,0,0,0.07);
   display:flex;flex-direction:column;gap:0;
 }
-.testi-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.gcard-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid var(--border);}
+.gcard-src{display:flex;align-items:center;gap:7px;font-size:0.8rem;font-weight:600;color:#555;}
+.gcard-verified{display:flex;align-items:center;gap:4px;font-size:0.72rem;font-weight:600;color:#4285F4;white-space:nowrap;}
+.testi-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;}
 .testi-head-left{display:flex;align-items:center;gap:10px;}
 .testi-avatar{
   width:42px;height:42px;border-radius:50%;
@@ -194,13 +158,22 @@ input,select{font-family:inherit;}
   box-shadow:0 1px 3px rgba(0,0,0,0.15);
 }
 .testi-name{font-weight:700;font-size:0.9rem;color:#1a1a1a;line-height:1.2;}
-.testi-stars{display:flex;align-items:center;gap:2px;margin-bottom:10px;}
+.testi-when{font-size:0.72rem;color:#999;margin-top:1px;}
+.testi-stars{display:flex;align-items:center;gap:2px;margin-bottom:10px;font-size:0.85rem;white-space:nowrap;}
 .testi-body{font-size:0.875rem;color:#333;line-height:1.65;margin:0;flex-grow:1;}
 .read-more-btn{margin-top:8px;background:none;border:none;padding:0;font-size:0.8rem;color:#888;cursor:pointer;text-align:left;font-family:inherit;font-weight:500;}
+/* Written testimonial (dark) card */
+.tcard{background:#111;border-color:#111;color:#fff;}
+.tcard .testi-body{color:rgba(255,255,255,0.9);}
+.tcard .testi-name{color:#fff;}
+.tcard .read-more-btn{color:rgba(255,255,255,0.55);}
+.tcard-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px;}
+.tcard-label{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+.tcard-foot{display:flex;align-items:center;gap:10px;margin-top:16px;}
 
 /* VIDEO TESTIMONIALS */
-.vidtesti-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
-@media(max-width:780px){.vidtesti-grid{grid-template-columns:1fr 1fr;}}
+.vidtesti-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+@media(max-width:900px){.vidtesti-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:480px){.vidtesti-grid{grid-template-columns:1fr;}}
 .vt-card{
   background:var(--bg2);border:1px solid var(--border);
@@ -229,13 +202,6 @@ input,select{font-family:inherit;}
 .vt-meta{padding:14px 14px 16px;}
 .vt-name{font-weight:700;font-size:0.85rem;color:var(--black);}
 .vt-role{font-size:0.75rem;color:var(--light-grey);margin-top:2px;}
-.vt-pending{
-  position:absolute;top:8px;left:8px;z-index:3;
-  background:rgba(0,0,0,0.65);color:rgba(180,120,255,0.9);
-  padding:3px 8px;border-radius:4px;
-  font-size:8px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
-  font-family:ui-monospace,Menlo,monospace;
-}
 
 /* LEARN */
 .learn-list{
@@ -261,8 +227,8 @@ input,select{font-family:inherit;}
 .fy-col.no h3{color:var(--red);}
 .fy-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .fy-list li{display:flex;gap:8px;font-size:0.85rem;color:var(--grey);line-height:1.5;}
-.fy-col.yes .fy-list li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0;}
-.fy-col.no .fy-list li::before{content:'✗';color:var(--red);font-weight:700;flex-shrink:0;}
+.fy-col.yes .fy-list li::before{content:'\2713';color:var(--green);font-weight:700;flex-shrink:0;}
+.fy-col.no .fy-list li::before{content:'\2717';color:var(--red);font-weight:700;flex-shrink:0;}
 
 /* HOW */
 .how-steps{
@@ -305,7 +271,7 @@ input,select{font-family:inherit;}
   transition:max-height .3s ease,padding .3s ease;
   font-size:0.88rem;color:var(--grey);line-height:1.7;
 }
-.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
+.faq-item.open .faq-a{max-height:320px;padding:0 22px 18px;}
 
 /* FAQ + FORM COMBINED */
 .faq-form-section{
@@ -354,14 +320,18 @@ input,select{font-family:inherit;}
 }
 .success-state h3{font-size:1.15rem;color:var(--black);margin-bottom:8px;}
 .success-state p{font-size:0.85rem;color:var(--grey);}
+/* Standalone top form section */
+.topform-section{padding:56px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
 
-/* SCARCITY */
-.scarcity-bar{background:var(--purple);color:white;text-align:center;padding:28px 24px;}
+/* SCARCITY (black, purple accents kept small) */
+.scarcity-bar{background:var(--black);color:white;text-align:center;padding:36px 24px;}
 .scarcity-bar h2{font-size:clamp(1.2rem,2.5vw,1.6rem);margin-bottom:8px;font-weight:700;}
-.scarcity-bar p{font-size:0.9rem;opacity:0.82;max-width:54ch;margin:0 auto 20px;}
+.scarcity-bar h2 .hot{color:var(--purple-light);}
+.scarcity-bar p{font-size:0.9rem;opacity:0.75;max-width:54ch;margin:0 auto 20px;}
 .scarcity-nums{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:20px;}
 .sc-n{font-size:2.2rem;font-weight:800;line-height:1;letter-spacing:-0.03em;}
-.sc-l{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.7;margin-top:4px;font-weight:600;}
+.sc-n.hot{color:var(--purple-light);}
+.sc-l{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;opacity:0.6;margin-top:4px;font-weight:600;}
 
 /* INLINE CTA */
 .inline-cta{text-align:center;margin-top:32px;}
@@ -397,8 +367,8 @@ footer{border-top:1px solid var(--border);padding:24px 0;background:var(--bg);}
 .d3{animation-delay:.3s;opacity:0;}
 
 /* GOOGLE G SVG inline */
-.google-g{width:22px;height:22px;flex-shrink:0;}
-.verified-check{display:inline-block;vertical-align:middle;margin-left:4px;}
+.google-g{width:20px;height:20px;flex-shrink:0;}
+.verified-check{display:inline-block;vertical-align:middle;}
 </style>
 
 <!-- Meta Pixel Code -->
@@ -421,11 +391,14 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- TOP BAR: date + live countdown + CTA -->
 <nav class="topbar">
   <div class="topbar-inner">
-    <div>
-      <img src="uploads/logo.png" alt="One Click Digital" class="logo-img">
+    <div class="tb-left">
+      <span class="tb-cal">&#128197;</span>
+      <span class="tb-date">Next live training: Thursday 23 July, 4:00 PM AEST</span>
+      <span class="tb-sep">&middot;</span>
+      <span class="tb-countdown" id="cd-banner" aria-live="polite"></span>
     </div>
     <button class="topbar-cta" onclick="scrollToForm()">Save My Spot</button>
   </div>
@@ -434,258 +407,81 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="wrap-wide fu d1" style="text-align:center">
-    <div class="hero-eyebrow">Free Live Webinar · Australian Construction Companies $1M+</div>
+    <div class="hero-eyebrow">Free Live Training &middot; Australian Construction Companies</div>
     <h1>
       Discover how Australian builders are using AI<br>
-      <mark class="ul">to quote faster, win more jobs, and run leaner</mark><br>
-      in this free live webinar built for $1M+ construction companies.
+      <mark class="ul">to quote faster and win more jobs</mark><br>
+      in this free live training built for construction companies.
     </h1>
   </div>
 
   <div class="vsl-wrap fu d2" style="margin-top:20px">
     <div class="vsl-frame" id="vsl-frame">
-      <iframe src="https://www.youtube.com/embed/81YJAcI04Qo?autoplay=1&mute=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media" allowfullscreen title="AI Webinar — Watch Before You Register"></iframe>
+      <iframe src="https://www.youtube.com/embed/81YJAcI04Qo?autoplay=1&mute=1&rel=0" style="position:absolute;inset:0;width:100%;height:100%;border:0;" allow="autoplay;encrypted-media" allowfullscreen title="Free AI training preview"></iframe>
     </div>
   </div>
 
-  <div class="wrap-wide fu d3" style="margin-top:14px;text-align:center">
-    <div style="display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — It's Free &rarr;</button>
-      <div class="countdown-box" id="countdown-wrap" aria-live="polite"></div>
-    </div>
+  <div class="wrap-wide fu d3" style="margin-top:20px;text-align:center">
+    <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     <div style="margin-top:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.78rem;color:#888;font-weight:500">
       <span style="color:var(--purple);font-weight:700">Free to attend</span>
-      <span style="opacity:.4">·</span>
-      <span>Live workshop — not a recording</span>
-      <span style="opacity:.4">·</span>
-      <span>AU construction $1M+ only</span>
-      <span style="opacity:.4">·</span>
+      <span style="opacity:.4">&middot;</span>
+      <span>Live workshop, not a recording</span>
+      <span style="opacity:.4">&middot;</span>
+      <span>AU construction only</span>
+      <span style="opacity:.4">&middot;</span>
       <span>Limited spots</span>
     </div>
   </div>
 </section>
 
-<hr class="section-divider">
-
-<!-- TEXT TESTIMONIALS -->
-<section class="section">
-  <div class="wrap-wide">
-    <span class="section-label">What clients are saying about One Click</span>
-    <h2 class="section-title">Real results from real construction businesses</h2>
-    <div class="testi-grid" id="testi-grid">
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#EA4335">ST</div>
-            <div><div class="testi-name">Simon Tzivakis</div></div>
+<!-- TOP REGISTRATION FORM -->
+<section class="topform-section" id="register-top">
+  <div class="wrap">
+    <div class="form-card">
+      <div id="form-inner-top">
+        <h3>Save Your Spot</h3>
+        <p class="form-sub">Takes 30 seconds. Free to attend &middot; Thursday 23 July, 4:00 PM AEST.</p>
+        <form class="reg-form" onsubmit="handleSubmit(event)">
+          <div class="field">
+            <label>Name *</label>
+            <input type="text" name="name" placeholder="James Smith" required autocomplete="name">
           </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="The team at One Click Agency has been incredible — professional, responsive, and results-driven. They made the whole process smooth and delivered exactly what they promised (and more). Highly recommend them to anyone looking to grow their business online!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#34A853">JW</div>
-            <div><div class="testi-name">Josh Waldrom</div></div>
+          <div class="field">
+            <label>Email Address *</label>
+            <input type="email" name="email" placeholder="james@smithbuilds.com.au" required autocomplete="email">
           </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="Robbie and the team at One Click have been amazing to work with! They have really made not only our own marketing needs have been taken care of, but also the clients we assist with in the trade and construction industry! Highly recommend!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#7B2CBF">AP</div>
-            <div><div class="testi-name">Angelo Papagelis</div></div>
+          <div class="field">
+            <label>Mobile Number *</label>
+            <input type="tel" name="phone" placeholder="0400 000 000" required autocomplete="tel">
           </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="We recently engaged One Click for our business marketing and were extremely impressed with the results. Josh and Robby were professional, proactive, and delivered a clear strategy that made a real impact. Highly recommend their team if you're looking to grow your brand."></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#EA4335">CC</div>
-            <div><div class="testi-name">Coy's Constructions</div></div>
+          <div class="field">
+            <label>Company Name *</label>
+            <input type="text" name="company" placeholder="Smith Builds Pty Ltd" required autocomplete="organization">
           </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="Robby has been a great support to our team. He understands the direction we want to take as a construction company and works closely with us to help reach those goals."></p>
+          <button type="submit" class="submit-btn">Save My Spot, It's Free &rarr;</button>
+          <p class="form-trust">No spam. Unsubscribe any time. Your details are safe with us.</p>
+        </form>
       </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#4285F4">TC</div>
-            <div><div class="testi-name">Tobie Consing</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="I had the chance to work with One Click Digital and was very impressed with their professional and creative approach. The team is knowledgeable, friendly, and truly cares about getting results. Highly recommend to anyone looking to grow their business!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#FF6D00">MD</div>
-            <div><div class="testi-name">Michael Domajnko</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="I've had the pleasure of working with One Click Digital for my businesses, and the results have been outstanding. Robby, the owner, is incredibly knowledgeable and genuinely invested in delivering top-tier marketing strategies. The team is proactive, responsive, and always goes the extra mile. Highly recommend One Click Digital."></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#8E24AA">GP</div>
-            <div><div class="testi-name">George Passas</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="I engaged One Click Digital for my ad campaigns across multiple businesses, and I couldn't be happier with the results. Their service is top-notch, their communication is clear and timely, and the results speak for themselves. Highly recommend!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#EA4335">SA</div>
-            <div><div class="testi-name">Shehzad Ahmed</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="I had the opportunity to work with One Click Digital, and I was consistently impressed by their strategic approach to marketing. The team is dedicated, creative, and always focused on delivering results for their clients. A great agency for businesses looking to enhance their brand presence!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#EA4335">SZ</div>
-            <div><div class="testi-name">Subuhi Zia</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="We've been working with One Click Digital for some time now and they have been nothing but exceptional! Highly recommend them to anyone who is looking for a marketing agency to help them out!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#FF6D00">MC</div>
-            <div><div class="testi-name">Martia Contos</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="Fantastic experience with One Click Digital! Their team is knowledgeable, creative, and truly understands our brand."></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#8E24AA">OH</div>
-            <div><div class="testi-name">Omar Hayek</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="My best idea was to reach out to One Click, you guys never let me down. I love it!!"></p>
-      </div>
-
-      <div class="testi-card">
-        <div class="testi-head">
-          <div class="testi-head-left">
-            <div class="testi-avatar" style="background:#4285F4">DN</div>
-            <div><div class="testi-name">Darren Nyssen</div></div>
-          </div>
-          <svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-        </div>
-        <div class="testi-stars">⭐⭐⭐⭐⭐<svg class="verified-check" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <p class="testi-body" data-full="Outstanding support and SEO knowledge."></p>
-      </div>
-
-    </div>
-    <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — It's Free &rarr;</button>
     </div>
   </div>
 </section>
 
-<!-- VIDEO TESTIMONIALS -->
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<!-- VIDEO TESTIMONIALS (social proof) -->
+<section class="section section-alt">
   <div class="wrap-wide">
     <span class="section-label">Video proof</span>
     <h2 class="section-title">Hear it directly from our clients</h2>
-    <div class="vidtesti-grid">
-
-      <!-- Paul Kluwer - local MP4 -->
-      <div class="vt-card" id="vt-0" onclick="playVideo(0)">
-        <div class="vt-thumb" id="vt-thumb-0">
-          <img src="uploads/thumb-paul-kluwer.jpg" alt="Paul Kluwer testimonial" class="vt-thumb-img" loading="lazy">
-          <div class="vt-thumb-overlay"></div>
-          <button class="vt-play" aria-label="Play Paul Kluwer testimonial">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="vt-meta">
-          <div class="vt-name">Paul Kluwer</div>
-          <div class="vt-role">CEO · Leak Detection Experts</div>
-        </div>
-      </div>
-
-      <!-- Matt Curd - YouTube -->
-      <div class="vt-card" id="vt-1" onclick="playVideo(1)">
-        <div class="vt-thumb" id="vt-thumb-1">
-          <img src="uploads/thumb-matt-curd.jpg" alt="Matt Curd testimonial" class="vt-thumb-img" loading="lazy">
-          <div class="vt-thumb-overlay"></div>
-          <button class="vt-play" aria-label="Play Matt Curd testimonial">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="vt-meta">
-          <div class="vt-name">Matt Curd</div>
-          <div class="vt-role">Director · Concept Design Construct</div>
-        </div>
-      </div>
-
-      <!-- Andrew Mantoufeh - YouTube -->
-      <div class="vt-card" id="vt-2" onclick="playVideo(2)">
-        <div class="vt-thumb" id="vt-thumb-2">
-          <img src="uploads/thumb-andrew-mantoufeh.jpg" alt="Andrew Mantoufeh testimonial" class="vt-thumb-img" loading="lazy">
-          <div class="vt-thumb-overlay"></div>
-          <button class="vt-play" aria-label="Play Andrew Mantoufeh testimonial">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-        </div>
-        <div class="vt-meta">
-          <div class="vt-name">Andrew Mantoufeh</div>
-          <div class="vt-role">MD · Clover Homes</div>
-        </div>
-      </div>
-
-    </div>
+    <p class="section-sub">Real construction and trade business owners on what changed after working with Legacy Media.</p>
+    <div class="vidtesti-grid" id="vidtesti-grid"></div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
 
-<!-- WHAT YOU'LL LEARN -->
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<!-- WHAT YOU'LL LEARN (information) -->
+<section class="section">
   <div class="wrap">
     <span class="section-label">What you'll learn</span>
     <h2 class="section-title">5 things you'll walk away with</h2>
@@ -695,40 +491,53 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
         <div class="learn-n">01</div>
         <div class="learn-body">
           <h4>How builders are using AI to quote faster and win more jobs right now</h4>
-          <p>Real workflows from Australian construction businesses — not theory, not hype.</p>
+          <p>Real workflows from Australian construction businesses, not theory, not hype.</p>
         </div>
       </div>
       <div class="learn-item">
         <div class="learn-n">02</div>
         <div class="learn-body">
           <h4>The exact tools saving hours every single week in the day-to-day</h4>
-          <p>A no-fluff walkthrough of the AI tools worth your time — and the ones to skip.</p>
+          <p>A no-fluff walkthrough of the AI tools worth your time, and the ones to skip.</p>
         </div>
       </div>
       <div class="learn-item">
         <div class="learn-n">03</div>
         <div class="learn-body">
           <h4>What to automate first so you see results straight away</h4>
-          <p>The fastest wins for construction businesses — the tasks you can hand to AI today and feel the difference this week.</p>
+          <p>The fastest wins for construction businesses, the tasks you can hand to AI today and feel the difference this week.</p>
         </div>
       </div>
       <div class="learn-item">
         <div class="learn-n">04</div>
         <div class="learn-body">
-          <h4>How to run a leaner, faster business without hiring anyone new</h4>
-          <p>Use AI to replace the marketing, admin, and quoting workload that's slowing you down — without adding headcount.</p>
+          <h4>How to run a faster, more efficient business without hiring anyone new</h4>
+          <p>Use AI to replace the marketing, admin, and quoting workload that's slowing you down, without adding headcount.</p>
         </div>
       </div>
       <div class="learn-item">
         <div class="learn-n">05</div>
         <div class="learn-body">
           <h4>Where most construction businesses go wrong when they try to implement AI</h4>
-          <p>The common pitfalls we've seen — and the simple framework that keeps you on the right track.</p>
+          <p>The common pitfalls we've seen, and the simple framework that keeps you on the right track.</p>
         </div>
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — Free Live Webinar &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS + WRITTEN TESTIMONIALS (social proof) -->
+<section class="section section-alt">
+  <div class="wrap-wide">
+    <span class="section-label">Client love</span>
+    <h2 class="section-title">What clients say about us</h2>
+    <p class="section-sub">Real results from real Australian construction and trade businesses.</p>
+    <div class="testi-grid" id="testi-grid"></div>
+    <div class="inline-cta">
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -740,33 +549,33 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
     <h2 class="section-title">Is this for you?</h2>
     <div class="foryou-grid">
       <div class="fy-col yes">
-        <h3>✓ This is for you if…</h3>
+        <h3>&#10003; This is for you if&hellip;</h3>
         <ul class="fy-list">
-          <li>You run a construction company doing $1M+ in annual revenue</li>
+          <li>You run a growing construction or trade business</li>
           <li>You're curious about AI but don't know where to start</li>
           <li>You're tired of depending on referrals for new work</li>
           <li>You want to use AI to grow without hiring an in-house team</li>
-          <li>You're the decision maker (or you'll bring one to the webinar)</li>
+          <li>You're the decision maker (or you'll bring one to the training)</li>
         </ul>
       </div>
       <div class="fy-col no">
-        <h3>✗ Not for you if…</h3>
+        <h3>&#10007; Not for you if&hellip;</h3>
         <ul class="fy-list">
           <li>You're not in the construction industry</li>
-          <li>You think AI is just hype — we're going to show real, working systems</li>
+          <li>You think AI is just hype, we're going to show real, working systems</li>
           <li>You're not based in Australia</li>
           <li>You're not open to changing how you currently do marketing</li>
         </ul>
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section class="section" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+<section class="section section-alt">
   <div class="wrap">
     <span class="section-label">How it works</span>
     <h2 class="section-title">Three steps. That's it.</h2>
@@ -775,7 +584,7 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
       <div class="how-step">
         <div class="how-num">1</div>
         <div class="how-body">
-          <h4>Register for the webinar</h4>
+          <h4>Register for the training</h4>
           <p>Drop your details in the form. Takes 60 seconds and it's completely free.</p>
         </div>
       </div>
@@ -783,7 +592,7 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
         <div class="how-num">2</div>
         <div class="how-body">
           <h4>Add the date to your calendar</h4>
-          <p>You'll get an email confirmation with the date, time, and the link. Block out the hour — you'll want to be camera-ready.</p>
+          <p>You'll get an email confirmation with the date, time, and the link. Block out the hour, you'll want to be camera-ready.</p>
         </div>
       </div>
       <div class="how-step">
@@ -795,7 +604,7 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot — It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -803,17 +612,15 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
 <!-- SCARCITY BAR -->
 <div class="scarcity-bar">
   <div class="wrap">
-    <h2>Limited Spots. Free to Attend. Don't Miss This.</h2>
+    <h2>Only <span class="hot">100 Spots</span>. Free to Attend. Don't Miss This.</h2>
     <p>Register in 60 seconds. Show up live to ask questions, see the tools in action, and walk away with a real plan for using AI in your construction business.</p>
     <div class="scarcity-nums">
       <div><div class="sc-n">Free</div><div class="sc-l">To Attend</div></div>
-      <div><div class="sc-n">Live</div><div class="sc-l">Workshop, Not a Recording</div></div>
-      <div><div class="sc-n">$1M+</div><div class="sc-l">AU Construction Only</div></div>
+      <div><div class="sc-n">Live</div><div class="sc-l">Not a Recording</div></div>
+      <div><div class="sc-n hot">100</div><div class="sc-l">Spots Only</div></div>
     </div>
     <div style="margin-top:28px">
-      <button class="cta-pill" style="background:white;color:var(--purple);box-shadow:0 6px 20px rgba(0,0,0,0.15)" onclick="scrollToForm()">
-        Save My Spot &mdash; It's Free &rarr;
-      </button>
+      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </div>
@@ -831,38 +638,38 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
         <div class="faq-list">
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              <span>Who is this webinar for?</span>
+              <span>Who is this training for?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">Australian construction company owners and decision makers doing $1M+ in annual revenue. If you're curious about AI but don't know where to start, this is for you.</div>
+            <div class="faq-a">Australian construction and trade business owners and decision makers. If you're curious about AI but don't know where to start, this is for you.</div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span>Do I need any AI experience to attend?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">No. This webinar is built specifically for construction business owners with zero AI background. We'll walk you through everything in plain English — no jargon, no fluff.</div>
+            <div class="faq-a">No. This training is built specifically for construction business owners with zero AI background. We'll walk you through everything in plain English, no jargon, no fluff.</div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span>Is there a cost to attend?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">No. The webinar is completely free. We run these regularly to share what we're seeing across our client base.</div>
+            <div class="faq-a">No. The training is completely free. We run these regularly to share what we're seeing across our client base.</div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
               <span>Will there be a replay if I can't make it live?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">A replay may be available depending on timing, but live attendance is strongly encouraged. The best part is the Q&amp;A — you can ask anything, and we'll answer in real time.</div>
+            <div class="faq-a">A replay may be available depending on timing, but live attendance is strongly encouraged. The best part is the Q&amp;A, you can ask anything, and we'll answer in real time.</div>
           </div>
           <div class="faq-item">
             <div class="faq-q" onclick="toggleFaq(this)">
-              <span>When is the webinar?</span>
+              <span>When is the training?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">The webinar date is to be announced. Register now and you'll receive the date and time via email confirmation.</div>
+            <div class="faq-a">The next live training is on Thursday 23 July at 4:00 PM AEST. Register now and you'll receive the calendar invite and the Zoom link by email.</div>
           </div>
         </div>
       </div>
@@ -873,24 +680,24 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
           <div id="form-inner">
             <h3>Save Your Spot</h3>
             <p class="form-sub">Takes 30 seconds. Free to attend.</p>
-            <form class="reg-form" id="reg-form" onsubmit="handleSubmit(event)">
+            <form class="reg-form" onsubmit="handleSubmit(event)">
               <div class="field">
-                <label for="f-name">Name *</label>
-                <input type="text" id="f-name" name="name" placeholder="James Smith" required autocomplete="name">
+                <label>Name *</label>
+                <input type="text" name="name" placeholder="James Smith" required autocomplete="name">
               </div>
               <div class="field">
-                <label for="f-email">Email Address *</label>
-                <input type="email" id="f-email" name="email" placeholder="james@smithbuilds.com.au" required autocomplete="email">
+                <label>Email Address *</label>
+                <input type="email" name="email" placeholder="james@smithbuilds.com.au" required autocomplete="email">
               </div>
               <div class="field">
-                <label for="f-phone">Mobile Number *</label>
-                <input type="tel" id="f-phone" name="phone" placeholder="0400 000 000" required autocomplete="tel">
+                <label>Mobile Number *</label>
+                <input type="tel" name="phone" placeholder="0400 000 000" required autocomplete="tel">
               </div>
               <div class="field">
-                <label for="f-company">Company Name *</label>
-                <input type="text" id="f-company" name="company" placeholder="Smith Builds Pty Ltd" required autocomplete="organization">
+                <label>Company Name *</label>
+                <input type="text" name="company" placeholder="Smith Builds Pty Ltd" required autocomplete="organization">
               </div>
-              <button type="submit" class="submit-btn">Save My Spot — It's Free &rarr;</button>
+              <button type="submit" class="submit-btn">Save My Spot, It's Free &rarr;</button>
               <p class="form-trust">No spam. Unsubscribe any time. Your details are safe with us.</p>
             </form>
           </div>
@@ -904,16 +711,15 @@ src="https://www.facebook.com/tr?id=3703815909938605&ev=PageView&noscript=1"
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <span class="footer-copy">&copy; 2026 One Click Digital | oneclickdigital.net.au | AU construction $1M+ only. Free educational webinar.</span>
+    <span class="footer-copy">&copy; 2026 Legacy Media | Free educational training for Australian construction companies.</span>
     <div class="footer-links">
-      <a href="https://oneclickdigital.net.au/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-      <a href="https://oneclickdigital.net.au" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://legacy-media.com.au/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
     </div>
   </div>
 </footer>
 
 <!-- STICKY MOBILE CTA -->
-<button class="sticky-mobile" onclick="scrollToForm()">Save My Spot — Free Webinar</button>
+<button class="sticky-mobile" onclick="scrollToForm()">Save My Spot, Free Training</button>
 
 <script>
 // ── SCROLL TO FORM ──
@@ -924,48 +730,60 @@ function scrollToForm() {
   window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
-// ── COUNTDOWN TIMER ──
+// ── COUNTDOWN TIMER (top banner) ──
 (function() {
-  var WEBINAR_DATE = new Date('2026-06-04T16:00:00+10:00');
-  var wrap = document.getElementById('countdown-wrap');
-  if (!wrap) return;
-
+  var WEBINAR_DATE = new Date('2026-07-23T16:00:00+10:00');
+  var el = document.getElementById('cd-banner');
+  if (!el) return;
   function pad(n) { return String(n).padStart(2, '0'); }
-
   function render() {
     var diff = Math.max(0, WEBINAR_DATE.getTime() - Date.now());
-    if (diff <= 0) {
-      wrap.innerHTML = '<span class="cd-live">Webinar Is Live Now — Join Now</span>';
-      return;
-    }
+    if (diff <= 0) { el.textContent = 'Live now, join us'; return; }
     var days  = Math.floor(diff / 86400000);
     var hours = Math.floor(diff / 3600000 % 24);
     var mins  = Math.floor(diff / 60000 % 60);
     var secs  = Math.floor(diff / 1000 % 60);
-    wrap.innerHTML =
-      '<div style="text-align:center;margin-bottom:4px"><div class="cd-label" style="font-size:12px;margin-bottom:4px">Webinar Starts In</div></div>' +
-      '<div class="cd-digits">' +
-        '<div class="cd-block"><div class="cd-num">' + pad(days)  + '</div><div class="cd-unit">Days</div></div>' +
-        '<div class="cd-sep">:</div>' +
-        '<div class="cd-block"><div class="cd-num">' + pad(hours) + '</div><div class="cd-unit">Hrs</div></div>' +
-        '<div class="cd-sep">:</div>' +
-        '<div class="cd-block"><div class="cd-num">' + pad(mins)  + '</div><div class="cd-unit">Min</div></div>' +
-        '<div class="cd-sep">:</div>' +
-        '<div class="cd-block"><div class="cd-num">' + pad(secs)  + '</div><div class="cd-unit">Sec</div></div>' +
-      '</div>';
+    el.textContent = 'Starts in ' + days + 'd ' + pad(hours) + 'h ' + pad(mins) + 'm ' + pad(secs) + 's';
   }
-
   render();
   setInterval(render, 1000);
 })();
 
-
 // ── VIDEO TESTIMONIALS ──
-var videoData = {
-  0: { type: 'mp4',     url: 'uploads/Leak-Detection-Testimonial-Video.mp4' },
-  1: { type: 'youtube', url: 'https://www.youtube.com/embed/Y7HwFq7M4kg?autoplay=1' },
-  2: { type: 'youtube', url: 'https://www.youtube.com/embed/QNDYK09cPi0?autoplay=1' }
-};
+var videoData = [
+  { type:'mp4',     src:'uploads/Leak-Detection-Testimonial-Video.mp4', thumb:'uploads/thumb-paul-kluwer.jpg', name:'Paul Kluwer', role:'Leak Detection Experts' },
+  { type:'youtube', id:'Y7HwFq7M4kg', thumb:'uploads/thumb-matt-curd.jpg',       name:'Matt Curd',        role:'Concept Design Construct' },
+  { type:'youtube', id:'QNDYK09cPi0', thumb:'uploads/thumb-andrew-mantoufeh.jpg', name:'Andrew Mantoufeh',  role:'Clover Homes' },
+  { type:'youtube', id:'iXikPLUC0Mg', name:'Legacy Media Client', role:'Verified testimonial' },
+  { type:'youtube', id:'tFd09q5xI7A', name:'Legacy Media Client', role:'Verified testimonial' },
+  { type:'youtube', id:'a8NcZ62JHtg', name:'Legacy Media Client', role:'Verified testimonial' },
+  { type:'youtube', id:'EsKiAkL-Km0', name:'Legacy Media Client', role:'Verified testimonial' },
+  { type:'mp4',     src:'https://legacy-media.com.au/wp-content/uploads/2026/06/Mamo-Testimonial-1-V4.mp4', name:'Mamo', role:'Verified testimonial' }
+];
+
+(function renderVideos() {
+  var grid = document.getElementById('vidtesti-grid');
+  if (!grid) return;
+  videoData.forEach(function(v, i) {
+    var thumbSrc = v.thumb ? v.thumb : (v.type === 'youtube' ? 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg' : '');
+    var thumbInner = thumbSrc
+      ? '<img src="' + thumbSrc + '" alt="' + v.name + ' testimonial" class="vt-thumb-img" loading="lazy">'
+      : '';
+    var card = document.createElement('div');
+    card.className = 'vt-card';
+    card.onclick = function() { playVideo(i); };
+    card.innerHTML =
+      '<div class="vt-thumb" id="vt-thumb-' + i + '">' +
+        thumbInner +
+        '<div class="vt-thumb-overlay"></div>' +
+        '<button class="vt-play" aria-label="Play ' + v.name + ' testimonial">' +
+          '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="vt-meta"><div class="vt-name">' + v.name + '</div><div class="vt-role">' + v.role + '</div></div>';
+    grid.appendChild(card);
+  });
+})();
 
 function playVideo(idx) {
   var thumb = document.getElementById('vt-thumb-' + idx);
@@ -973,47 +791,103 @@ function playVideo(idx) {
   var v = videoData[idx];
   if (!v) return;
   if (v.type === 'mp4') {
-    thumb.innerHTML = '<video controls autoplay style="width:100%;height:100%;object-fit:cover" src="' + v.url + '"></video>';
-  } else if (v.type === 'youtube') {
-    thumb.innerHTML = '<iframe style="width:100%;height:100%;border:0" src="' + v.url + '" allow="autoplay;encrypted-media" allowfullscreen title="Andrew Mantoufeh testimonial"></iframe>';
+    thumb.innerHTML = '<video controls autoplay playsinline style="width:100%;height:100%;object-fit:cover" src="' + v.src + '"></video>';
+  } else {
+    thumb.innerHTML = '<iframe style="width:100%;height:100%;border:0" src="https://www.youtube.com/embed/' + v.id + '?autoplay=1&rel=0" allow="autoplay;encrypted-media" allowfullscreen title="' + v.name + ' testimonial"></iframe>';
   }
 }
+
+// ── REVIEWS + WRITTEN TESTIMONIALS ──
+var G_LOGO = '<svg class="google-g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.31-8.16 2.31-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>';
+var CHECK = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M7 12.5l3.5 3.5 6.5-7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+var STARS = '⭐⭐⭐⭐⭐';
+var AV_COLORS = ['#EA4335','#4285F4','#34A853','#7B2CBF','#FF6D00','#8E24AA'];
+
+var reviewsData = [
+  { t:'g', name:'Ma con',           when:'6 months ago', text:"Legacy Media has been incredible to work with. We recently started our Google Ads campaign with them, and we secured a job from the very first lead that came through. Their team is professional, responsive, and clearly knows how to deliver results." },
+  { t:'g', name:'Andrew P',          when:'4 weeks ago',  text:"I had a great experience working with Robby from Legacy Media. He helped us set up and implement AI into our business, and the whole process was seamless from start to finish." },
+  { t:'w', name:'Michelle',          role:'EC Family',    text:"Such an amazing guy doing some incredible things in the marketing space. He's authentic, he has a lot of integrity, and is fabulous to work with. If you've got anything aligned with his business, I suggest you look him up." },
+  { t:'g', name:'Sam Nikooei',       when:'7 months ago', text:"Fantastic team at Legacy Media! Robby is an amazing guy to work with, talented, genuine, and incredibly knowledgeable." },
+  { t:'g', name:'Christian Volpi',   when:'a month ago',  text:"Robbie and Josh have been on our business's SEO for the last 5 months with brilliant results showing within a few months. Great communication and up to date monthly calls to talk me through the SEO report. I highly recommend the team at Legacy Media." },
+  { t:'g', name:'Simon Tzivakis',    when:'6 months ago', text:"Legacy Media went above and beyond to understand our goals and deliver real results. Their creativity, communication, and professionalism set them apart. Couldn't recommend them more highly." },
+  { t:'w', name:'Paul Kluwer',       role:'Leak Detection Experts', text:"I only connect with people of high integrity, and I highly recommend him if you're looking at social media or marketing for your business. Wonderful young man and cannot recommend him highly enough." },
+  { t:'g', name:'Will Edmonds',      when:'a month ago',  text:"I had a session with Robby diving into the world of AI and how to incorporate it into my construction business. He was very knowledgeable and went over and above to educate me. Would recommend Robby and his team for sure." },
+  { t:'g', name:'George Passas',     when:'a year ago',   text:"We've had the pleasure of working with Legacy Media, and they have truly exceeded our expectations. Their creativity and the high-quality videos they've produced have helped our brand engage audiences across social media like never before." },
+  { t:'g', name:'Aleisha Meli',      when:'2 months ago', text:"Robby has been amazing at helping us understand what our business needs at each stage and where to go from there. He takes time and care to fully understand what we are after to tailor his suggestions. Definitely recommend!" },
+  { t:'w', name:'Darren Yeow',       role:'',             text:"Super reliable, super trustworthy. When he says he's going to do something he gets it done, even in half the time. He's a doer, he makes things happen. Someone you know you can trust." },
+  { t:'g', name:'Jack Khoshaba',     when:'2 months ago', text:"Robby was amazing, he teaches you ways to actually implement AI into your business, and how to improve it and teach it to do what you need it to do. For anyone looking at dealing with Legacy Media I would highly recommend." },
+  { t:'g', name:'Michael Domajnko',  when:'a year ago',   text:"I've had the pleasure of working with Legacy Media for my businesses, and the results have been outstanding. Robby, the owner, is incredibly knowledgeable and genuinely invested in delivering top-tier marketing strategies. Highly recommend Legacy Media." },
+  { t:'g', name:'Profect1 Info',     when:'a year ago',   text:"Robbie from Legacy Media has done an awesome job with our on-site videography and marketing. We would highly recommend Legacy Media to any trade business looking to scale or take their videography to the next level." },
+  { t:'w', name:'Siena Capp',        role:'',             text:"I am absolutely super impressed by his drive, his innovation, and the way his mind works. There is no one I'd rather have look after me, my website, and my social media marketing." },
+  { t:'g', name:'Josh Waldrom',      when:'11 months ago',text:"Robbie and the team at Legacy Media have been amazing to work with! They've taken care of our own marketing needs, and the clients we assist in the trade and construction industry. Highly recommend! Thanks guys." },
+  { t:'g', name:'Tom Coy',           when:'10 months ago',text:"Robbie and the team at Legacy Media really take the time to explain the marketing journey to us and map out a road to success. Highly recommended." },
+  { t:'w', name:'Steve Riviero',     role:'',             text:"The way he makes my business look, and not just my business but my brand, is next level. Definitely recommend Robby to anybody. If you get a chance to work with him, go for it. You won't regret it." },
+  { t:'g', name:'Angelo Papagelis',  when:'10 months ago',text:"We recently engaged Legacy Media for our business marketing and were extremely impressed with the results. Josh and Robby were professional, proactive, and delivered a clear strategy that made a real impact. Highly recommend their team." },
+  { t:'w', name:'Matt',              role:'Concept Design Construct', text:"We were working off referrals for years with no real way of growing. Robby understood exactly what I wanted and how to give me the tools to do it. I've secured close to three months' worth of work and a steady pipeline of leads. Legacy Media made it so simple." },
+  { t:'g', name:'Adam Murphy',       when:'4 months ago', text:"It's not easy navigating your way through the virtual world. Stick to what you know and let Robbie from Legacy Media handle this!" }
+];
+
+function initials(name) {
+  return name.split(' ').filter(Boolean).slice(0, 2).map(function(w){ return w[0].toUpperCase(); }).join('');
+}
+
+function applyReadMore(p, full) {
+  var LIMIT = 150;
+  if (full.length <= LIMIT) { p.textContent = full; return; }
+  var short = full.slice(0, LIMIT).trimEnd() + '…';
+  p.textContent = short;
+  var btn = document.createElement('button');
+  btn.className = 'read-more-btn';
+  btn.textContent = 'Read more';
+  var expanded = false;
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    expanded = !expanded;
+    p.textContent = expanded ? full : short;
+    btn.textContent = expanded ? 'Show less' : 'Read more';
+  });
+  p.parentElement.appendChild(btn);
+}
+
+(function renderReviews() {
+  var grid = document.getElementById('testi-grid');
+  if (!grid) return;
+  reviewsData.forEach(function(r, i) {
+    var color = AV_COLORS[i % AV_COLORS.length];
+    var ini = initials(r.name);
+    var card = document.createElement('div');
+    if (r.t === 'g') {
+      card.className = 'testi-card gcard';
+      card.innerHTML =
+        '<div class="gcard-top"><span class="gcard-src">' + G_LOGO + 'Review on Google</span>' +
+        '<span class="gcard-verified">' + CHECK + 'Verified</span></div>' +
+        '<div class="testi-head"><div class="testi-head-left">' +
+          '<div class="testi-avatar" style="background:' + color + '">' + ini + '</div>' +
+          '<div><div class="testi-name">' + r.name + '</div><div class="testi-when">' + r.when + '</div></div>' +
+        '</div><div class="testi-stars">' + STARS + '</div></div>' +
+        '<p class="testi-body"></p>';
+    } else {
+      card.className = 'testi-card tcard';
+      card.innerHTML =
+        '<div class="tcard-top"><span class="tcard-label">Testimonial</span><div class="testi-stars">' + STARS + '</div></div>' +
+        '<p class="testi-body"></p>' +
+        '<div class="tcard-foot"><div class="testi-avatar" style="background:#333">' + ini + '</div>' +
+        '<div><div class="testi-name">' + r.name + '</div>' + (r.role ? '<div class="testi-when">' + r.role + '</div>' : '') + '</div></div>';
+    }
+    grid.appendChild(card);
+    applyReadMore(card.querySelector('.testi-body'), r.text);
+  });
+})();
 
 // ── FAQ ACCORDION ──
 function toggleFaq(btn) {
   var item = btn.parentElement;
   var isOpen = item.classList.contains('open');
-  // Close all
   document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
-  // Open clicked if it wasn't open
   if (!isOpen) item.classList.add('open');
 }
 
-// ── TESTIMONIAL READ MORE ──
-(function() {
-  var LIMIT = 160;
-  document.querySelectorAll('.testi-body[data-full]').forEach(function(p) {
-    var full = p.getAttribute('data-full');
-    if (full.length <= LIMIT) {
-      p.textContent = full;
-      return;
-    }
-    var short = full.slice(0, LIMIT).trimEnd() + '…';
-    p.textContent = short;
-    var btn = document.createElement('button');
-    btn.className = 'read-more-btn';
-    btn.textContent = 'Read more';
-    var expanded = false;
-    btn.addEventListener('click', function() {
-      expanded = !expanded;
-      p.textContent = expanded ? full : short;
-      btn.textContent = expanded ? 'Show less' : 'Read more';
-    });
-    p.parentElement.appendChild(btn);
-  });
-})();
-
-// ── FORM SUBMIT ──
+// ── FORM SUBMIT (works for every form on the page) ──
 function handleSubmit(e) {
   e.preventDefault();
   var form = e.target;
@@ -1021,26 +895,24 @@ function handleSubmit(e) {
   btn.disabled    = true;
   btn.textContent = 'Saving your spot…';
 
-  // URLSearchParams = application/x-www-form-urlencoded — a "simple" CORS
-  // request that needs no preflight, so the POST always reaches Zapier
+  function val(n) { var f = form.querySelector('[name="' + n + '"]'); return f ? f.value : ''; }
+
+  // URLSearchParams sends as application/x-www-form-urlencoded, a "simple"
+  // CORS request that needs no preflight, so the POST always reaches Zapier
   // before the page navigates away.
   var params = new URLSearchParams();
-  params.append('name',    document.getElementById('f-name').value);
-  params.append('email',   document.getElementById('f-email').value);
-  params.append('phone',   document.getElementById('f-phone').value);
-  params.append('company', document.getElementById('f-company').value);
+  params.append('name',    val('name'));
+  params.append('email',   val('email'));
+  params.append('phone',   val('phone'));
+  params.append('company', val('company'));
   params.append('source',  'ai-webinar-landing');
 
   fetch('https://hooks.zapier.com/hooks/catch/12454565/4o30vsu/', {
     method: 'POST',
     body:   params
   })
-  .then(function() {
-    window.location.href = 'thank-you.html';
-  })
-  .catch(function() {
-    window.location.href = 'thank-you.html';
-  });
+  .then(function() { window.location.href = 'thank-you.html'; })
+  .catch(function() { window.location.href = 'thank-you.html'; });
 }
 </script>
 </body>
