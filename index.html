@@ -398,7 +398,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
   <div class="topbar-inner">
     <div class="tb-left">
       <span class="tb-cal">&#128197;</span>
-      <span class="tb-date">Next live training: Thursday 17 September, 4:00 PM AEST</span>
+      <span class="tb-date" id="tb-date">Next live training: Thursday 22 October, 4:00 PM AEDT</span>
       <span class="tb-sep">&middot;</span>
       <span class="tb-countdown" id="cd-banner" aria-live="polite"></span>
     </div>
@@ -443,7 +443,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
     <div class="form-card">
       <div id="form-inner-top">
         <h3>Save Your Spot</h3>
-        <p class="form-sub">Takes 30 seconds. Free to attend &middot; Thursday 17 September, 4:00 PM AEST.</p>
+        <p class="form-sub" id="form-sub-top">Takes 30 seconds. Free to attend &middot; Thursday 22 October, 4:00 PM AEDT.</p>
         <form class="reg-form" onsubmit="handleSubmit(event)">
           <div class="field">
             <label>Name *</label>
@@ -670,7 +670,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
               <span>When is the training?</span>
               <span class="faq-icon">+</span>
             </div>
-            <div class="faq-a">The next live training is on Thursday 17 September at 4:00 PM AEST. Register now and you'll receive the calendar invite and the Zoom link by email.</div>
+            <div class="faq-a" id="faq-date-a">The next live training is on Thursday 22 October at 4:00 PM AEDT. Register now and you'll receive the calendar invite and the Zoom link by email.</div>
           </div>
         </div>
       </div>
@@ -722,6 +722,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
 <!-- STICKY MOBILE CTA -->
 <button class="sticky-mobile" onclick="scrollToForm()">Save My Spot, Free Training</button>
 
+<script src="schedule.js"></script>
 <script>
 // ── SCROLL TO FORM ──
 function scrollToForm() {
@@ -731,9 +732,19 @@ function scrollToForm() {
   window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
-// ── COUNTDOWN TIMER (top banner) ──
+// ── DATE TEXT + COUNTDOWN TIMER (from schedule.js) ──
 (function() {
-  var WEBINAR_DATE = new Date('2026-09-17T16:00:00+10:00');
+  var W = window.WEBINAR;
+  if (W) {
+    var b = document.getElementById('tb-date');
+    if (b) b.textContent = 'Next live training: ' + W.full;
+    var fs = document.getElementById('form-sub-top');
+    if (fs) fs.textContent = 'Takes 30 seconds. Free to attend · ' + W.full + '.';
+    var fq = document.getElementById('faq-date-a');
+    if (fq) fq.textContent = 'The next live training is on ' + W.label + ' at ' + W.timeLabel +
+      '. Register now and you’ll receive the calendar invite and the Zoom link by email.';
+  }
+  var WEBINAR_DATE = (W && W.start) ? W.start : new Date('2026-10-22T16:00:00+11:00');
   var el = document.getElementById('cd-banner');
   if (!el) return;
   function pad(n) { return String(n).padStart(2, '0'); }
