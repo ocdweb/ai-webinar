@@ -1,13 +1,14 @@
 /* ──────────────────────────────────────────────────────────────
    Webinar schedule (single source of truth for both pages)
 
-   To update the series, edit SCHEDULE below. The site automatically
-   shows the NEXT upcoming date and counts down to it; once a session's
-   start time + duration has passed, it advances to the following date.
+   The live date is PINNED — the site shows SCHEDULE[ACTIVE_INDEX] and
+   does NOT advance on its own. To move to the next session, change
+   ACTIVE_INDEX below (and/or edit SCHEDULE), then publish only after
+   the client confirms. This keeps every date change under manual review.
 
    All sessions are 4:00 PM Melbourne time. Melbourne is AEDT (UTC+11)
    during daylight saving (Oct–Apr) and AEST (UTC+10) otherwise, so set
-   OFFSET / TZ_LABEL to match the dates below.
+   OFFSET / TZ_LABEL to match the active date below.
    ────────────────────────────────────────────────────────────── */
 (function () {
   var SCHEDULE = [
@@ -16,6 +17,9 @@
     { date: '2026-11-19', label: 'Thursday 19 November', labelLong: 'Thursday 19th of November' },
     { date: '2026-12-03', label: 'Thursday 3 December',  labelLong: 'Thursday 3rd of December' }
   ];
+
+  // Which session is live right now. Advance ONLY on client confirmation.
+  var ACTIVE_INDEX = 0;           // 0 = Thursday 22 October
 
   var START_LOCAL = '16:00:00';   // 4:00 PM
   var END_LOCAL   = '18:00:00';   // 6:00 PM (2-hour block)
@@ -30,15 +34,7 @@
       'T' + pad(d.getUTCHours()) + pad(d.getUTCMinutes()) + '00Z';
   }
 
-  function nextEntry() {
-    var now = Date.now();
-    for (var i = 0; i < SCHEDULE.length; i++) {
-      if (startInstant(SCHEDULE[i]).getTime() + DURATION_MS > now) return SCHEDULE[i];
-    }
-    return SCHEDULE[SCHEDULE.length - 1];
-  }
-
-  var e     = nextEntry();
+  var e     = SCHEDULE[ACTIVE_INDEX] || SCHEDULE[0];
   var start = startInstant(e);
   var end   = new Date(start.getTime() + DURATION_MS);
   var timeLabel = '4:00 PM ' + TZ_LABEL;
