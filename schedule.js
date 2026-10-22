@@ -19,7 +19,7 @@
   ];
 
   // Which session is live right now. Advance ONLY on client confirmation.
-  var ACTIVE_INDEX = 0;           // 0 = Thursday 22 October
+  var ACTIVE_INDEX = 1;           // 1 = Thursday 5 November
 
   var START_LOCAL = '16:00:00';   // 4:00 PM
   var END_LOCAL   = '18:00:00';   // 6:00 PM (2-hour block)
