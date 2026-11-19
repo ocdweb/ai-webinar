@@ -15,11 +15,12 @@
     { date: '2026-10-22', label: 'Thursday 22 October',  labelLong: 'Thursday 22nd of October' },
     { date: '2026-11-05', label: 'Thursday 5 November',  labelLong: 'Thursday 5th of November' },
     { date: '2026-11-19', label: 'Thursday 19 November', labelLong: 'Thursday 19th of November' },
-    { date: '2026-12-03', label: 'Thursday 3 December',  labelLong: 'Thursday 3rd of December' }
+    { date: '2026-12-03', label: 'Thursday 3 December',  labelLong: 'Thursday 3rd of December' },
+    { date: '2026-12-09', label: 'Wednesday 9 December', labelLong: 'Wednesday 9th of December' }
   ];
 
   // Which session is live right now. Advance ONLY on client confirmation.
-  var ACTIVE_INDEX = 2;           // 2 = Thursday 19 November
+  var ACTIVE_INDEX = 4;           // 4 = Wednesday 9 December
 
   var START_LOCAL = '16:00:00';   // 4:00 PM
   var END_LOCAL   = '18:00:00';   // 6:00 PM (2-hour block)
