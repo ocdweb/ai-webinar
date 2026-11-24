@@ -402,7 +402,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
       <span class="tb-sep">&middot;</span>
       <span class="tb-countdown" id="cd-banner" aria-live="polite"></span>
     </div>
-    <button class="topbar-cta" onclick="scrollToForm()">Save My Spot</button>
+    <button class="topbar-cta" onclick="scrollToForm(this)">Save My Spot</button>
   </div>
 </nav>
 
@@ -424,7 +424,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
   </div>
 
   <div class="wrap-wide fu d3" style="margin-top:20px;text-align:center">
-    <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+    <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     <div style="margin-top:14px;display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;font-size:0.78rem;color:#888;font-weight:500">
       <span style="color:var(--purple);font-weight:700">Free to attend</span>
       <span style="opacity:.4">&middot;</span>
@@ -477,7 +477,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
     <p class="section-sub">Real construction and trade business owners on what changed after working with Legacy Media.</p>
     <div class="vidtesti-grid" id="vidtesti-grid"></div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -525,7 +525,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -538,7 +538,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
     <p class="section-sub">Real results from real Australian construction and trade businesses.</p>
     <div class="testi-grid" id="testi-grid"></div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -570,7 +570,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -605,7 +605,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
       </div>
     </div>
     <div class="inline-cta">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </section>
@@ -621,7 +621,7 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
       <div><div class="sc-n hot">100</div><div class="sc-l">Spots Only</div></div>
     </div>
     <div style="margin-top:28px">
-      <button class="cta-pill" onclick="scrollToForm()">Save My Spot, It's Free &rarr;</button>
+      <button class="cta-pill" onclick="scrollToForm(this)">Save My Spot, It's Free &rarr;</button>
     </div>
   </div>
 </div>
@@ -720,15 +720,26 @@ src="https://www.facebook.com/tr?id=667706974859686&ev=PageView&noscript=1"
 </footer>
 
 <!-- STICKY MOBILE CTA -->
-<button class="sticky-mobile" onclick="scrollToForm()">Save My Spot, Free Training</button>
+<button class="sticky-mobile" onclick="scrollToForm(this)">Save My Spot, Free Training</button>
 
 <script src="schedule.js"></script>
 <script>
 // ── SCROLL TO FORM ──
-function scrollToForm() {
-  var el = document.getElementById('register-form');
-  if (!el) return;
-  var top = el.getBoundingClientRect().top + window.scrollY - 80;
+function scrollToForm(btn) {
+  // Scroll to the NEXT registration form below the clicked button.
+  var forms = ['register-top', 'register-form']
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+  if (!forms.length) return;
+  var target = forms[forms.length - 1]; // default: last (bottom) form
+  if (btn) {
+    var btnTop = btn.getBoundingClientRect().top + window.scrollY;
+    for (var i = 0; i < forms.length; i++) {
+      var fTop = forms[i].getBoundingClientRect().top + window.scrollY;
+      if (fTop > btnTop + 4) { target = forms[i]; break; }
+    }
+  }
+  var top = target.getBoundingClientRect().top + window.scrollY - 80;
   window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
